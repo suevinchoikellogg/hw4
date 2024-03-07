@@ -1,8 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 
   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
     <title>Tacostagram Final</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
@@ -27,13 +30,10 @@
 
   <nav class="navbar bg-primary mb-3" data-bs-theme="dark">
     <div class="container">
-      <%= flash["notice"] %>
-    </div>
-
-    <div>
-      <a href="/" class="navbar-brand">Home</a>
+      <a href="/places" class="navbar-brand">Home</a>
       <span class="navbar-text">
-
+      <!-- <%= flash["notice"] %> --> 
+    
       <a href="/logout" class="btn btn-default">Logout</a>
       <a href="/login" class="btn btn-default">Login</a>
       <a href="/users/new" class="btn btn-default">Signup</a>
