@@ -14,7 +14,11 @@
   <h4><%= entry["title"] %></h4>
   <h6><%= entry["occurred_on"] %></h6>
   <p><%= entry["description"] %></p>
-  <img src="<%= entry["image_url"] %>" class="img-fluid">
+    <% if entry.image_url.attached? %>
+      <img src="<%= url_for(entry.image_url) %>" class="img-fluid">
+    <% else %>
+      <img src="<%= entry["image"] %>" class="img-fluid">
+    <% end %>
 </div>
 <% end %>
 </div>
