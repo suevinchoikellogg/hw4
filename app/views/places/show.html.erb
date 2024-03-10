@@ -1,8 +1,12 @@
 <h1><%= @place["name"] %></h1>
 
 <p>
-  <a href="/entries/new?place_id=<%= @place["id"] %>" class="btn btn-blue">New Post</a>
+  <a href="/entries/new?place_id=<%= @place["id"] %>" class="btn btn-primary">New Post</a>
 </p>
+
+<% if entry.uploaded_image.attached? %>
+<img src="<%= url_for(entry.uploaded_image) %>" class="img-fluid">
+<% end %>
 
 <div class="row">
 <% for entry in @entries %>
@@ -15,7 +19,6 @@
 </div>
 
 
-
 <p>
-  <a href="/places" class="btn btn-blue">Back to All Places</a>
+  <a href="/places" class="btn btn-primary">Back to All Places</a>
 </p>
