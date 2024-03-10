@@ -29,7 +29,7 @@
   <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
-      <a href="/places" class="navbar-brand">Home</a>
+      <a href="/places" class="navbar-brand" style="font-weight: bold">Home</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -40,10 +40,10 @@
           <% @user = User.find_by({ "id" => session["user_id"] }) %>
           <% if @user == nil %>
             <li class="nav-item"><a href="/login" class="btn btn-default">Login</a></li>
-            <li class="nav-item"><a href="/users/new" class="btn btn-default">Signup</a></li>
+            <li class="nav-item"><a href="/users/new" class="btn btn-success">Signup</a></li>
           <% else %>
             <li class="nav-item"><a href="" class="btn btn-default">Hello, <%= @user["username"] %></a></li>
-            <li class="nav-item"><a href="/logout" class="btn btn-default">Logout</a></li>
+            <li class="nav-item"><a href="/logout" class="btn btn-secondary">Logout</a></li>
           <% end %>
         </ul>
     </div>

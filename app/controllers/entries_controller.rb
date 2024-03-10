@@ -11,7 +11,6 @@ class EntriesController < ApplicationController
       @entry["title"] = params["title"]
       @entry["description"] = params["description"]
       @entry["occurred_on"] = params["occurred_on"]
-      # @entry["image_url"] = params["image_url"]
       @entry.image_url.attach(params["image_url"])
       @entry["place_id"] = params["place_id"]
       @entry.save
