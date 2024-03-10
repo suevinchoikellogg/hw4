@@ -37,15 +37,14 @@
     
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a href="/logout" class="btn btn-default">Logout</a>
-          </li>
-          <li class="nav-item">
-            <a href="/login" class="btn btn-default">Login</a>
-          </li>
-          <li class="nav-item">
-            <a href="/users/new" class="btn btn-default">Signup</a>
-          </li>
+          <% @user = User.find_by({ "id" => session["user_id"] }) %>
+          <% if @user == nil %>
+            <li class="nav-item"><a href="/login" class="btn btn-default">Login</a></li>
+            <li class="nav-item"><a href="/users/new" class="btn btn-default">Signup</a></li>
+          <% else %>
+            <li class="nav-item"><a href="" class="btn btn-default">Hello, <%= @user["username"] %></a></li>
+            <li class="nav-item"><a href="/logout" class="btn btn-default">Logout</a></li>
+          <% end %>
         </ul>
     </div>
   </nav>
