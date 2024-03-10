@@ -13,6 +13,7 @@ class SessionsController < ApplicationController
         flash["notice"] = "Try Again."
         redirect_to "/login"
       end
+    end
   end
 
   def destroy
@@ -21,4 +22,3 @@ class SessionsController < ApplicationController
     redirect_to "/login"
   end
 end
-  
