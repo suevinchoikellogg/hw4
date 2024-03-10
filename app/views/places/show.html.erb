@@ -4,9 +4,6 @@
   <a href="/entries/new?place_id=<%= @place["id"] %>" class="btn btn-primary">New Post</a>
 </p>
 
-<% if entry.uploaded_image.attached? %>
-<img src="<%= url_for(entry.uploaded_image) %>" class="img-fluid">
-<% end %>
 
 <div class="row">
 <% for entry in @entries %>
@@ -14,6 +11,9 @@
   <h4><%= entry["title"] %></h4>
   <h6><%= entry["occurred_on"] %></h6>
   <p><%= entry["description"] %></p>
+  <% if entry.uploaded_image.attached? %>
+    <%= image_tag(entry.uploaded_image) %>
+  <% end %>
 </div>
 <% end %>
 </div>
