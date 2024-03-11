@@ -27,7 +27,7 @@
 
 
   <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
+  <nav class="navbar navbar-expand-lg navbar-light bg-dark">
     <div class="container">
       <a href="/places" class="navbar-brand" style="font-weight: bold; color: white">Home</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,8 +40,8 @@
           <% @user = User.find_by({ "id" => session["user_id"] }) %>
           <% if @user == nil %>
             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-            <li class="nav-item"><a href="/login" class="btn btn-success">Login</a></li>
-            <li class="nav-item"><a href="/users/new" class="btn btn-danger">Signup</a></li>
+            <li class="nav-item"><a href="/login" class="btn btn-outline-success">Login</a></li>
+            <li class="nav-item"><a href="/users/new" class="btn btn-outline-danger">Signup</a></li>
             </div>
           <% else %>
             <li class="nav-item"><a href="" class="btn btn-default" style="color: white">Hello, <%= @user["username"] %></a></li>
@@ -60,6 +60,17 @@
 
     <%= yield %>
   </body>
+
+<style>
+    .navbar-toggler {
+        background-color: #ffffff;
+        opacity: 0.4
+        ;
+        /* Add any additional styling you want */
+    }
+</style>
+
+
 
 
 </html>
