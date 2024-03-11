@@ -5,11 +5,11 @@ Rails.application.routes.draw do
   resources "sessions"
   resources "users"
 
-   # Login/logout
-   get("/login", { :controller => "sessions", :action => "new" })
-   get("/logout", { :controller => "sessions", :action => "destroy" })
+  # Login/logout
+  get("/login", { :controller => "sessions", :action => "new" })
+  get("/logout", { :controller => "sessions", :action => "destroy" })
 
-     # Define the root route
-    get("/", { :controller => "placess", :action => "index" })
+  # Define the root route
+  get("/", { :controller => "placess", :action => "index" })
 
 end
