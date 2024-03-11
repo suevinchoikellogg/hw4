@@ -6,6 +6,7 @@
   <a href="/entries/new?place_id=<%= @place["id"] %>" class="btn btn-primary">New Post</a>
 </p>
 
+<% if @entries.any? %>
 <div class="row row-cols-3">
   <% for entry in @entries %>
     <div class="col">
@@ -15,8 +16,12 @@
     <img src="<%= entry["image_url"] %>" class="img-fluid col" style="object-fit: cover; height: 300px;">
   </div>
 <% end %>
-
 </div>
+
+<% else %>
+  <p>No posts available.</p>
+<% end %>
+
 
 <div class="container mt-4"></div>
 
