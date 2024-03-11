@@ -1,21 +1,22 @@
 <h1 style="font-weight: bold"><%= @place["name"] %></h1>
 
-<div class="container mt-4"></div>
+<div class="container mt-4">
 
 <p>
   <a href="/entries/new?place_id=<%= @place["id"] %>" class="btn btn-primary">New Post</a>
 </p>
 
-<div class="container mt-4"></div>
 <div class="row row-cols-3">
   <% for entry in @entries %>
     <div class="col">
-    <h4 style="font-weight: bold;"><%= entry["title"] %></h4>
-    <div class="col fs-6"><%= entry["occurred_on"] %></div>
+    <div style="font-weight: bold;" class="col fs-4 text-decoration-underline"><%= entry["title"] %></div>
+    <div class="col fs-6 fw-lighter"><%= entry["occurred_on"] %></div>
     <div class="col fs-5"><%= entry["description"] %></div>
     <img src="<%= entry["image_url"] %>" class="img-fluid col" style="object-fit: cover; height: 300px;">
   </div>
 <% end %>
+
+</div>
 
 <div class="container mt-4"></div>
 
